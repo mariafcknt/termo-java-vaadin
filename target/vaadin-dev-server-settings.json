@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "C:/Meus Projetos/termo-java-poo/termo/frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "C:/Meus Projetos/termo-java-poo/termo/frontend/generated/jar-resources",
+  "staticOutput": "C:/Meus Projetos/termo-java-poo/termo/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "C:\\Meus Projetos\\termo-java-poo\\termo\\target\\classes\\META-INF\\VAADIN\\config",
+  "frontendBundleOutput": "C:\\Meus Projetos\\termo-java-poo\\termo\\target\\classes\\META-INF\\VAADIN\\webapp",
+  "devBundleOutput": "C:/Meus Projetos/termo-java-poo/termo/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "C:/Meus Projetos/termo-java-poo/termo/src/main/dev-bundle/config",
+  "jarResourcesFolder": "C:/Meus Projetos/termo-java-poo/termo/frontend/generated/jar-resources",
+  "themeName": "my-app",
+  "clientServiceWorkerSource": "C:\\Meus Projetos\\termo-java-poo\\termo\\target\\sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
