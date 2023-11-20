@@ -35,8 +35,7 @@ public class TermoView extends VerticalLayout{
 
         add(new H1("Termo"));
 
-        results = new Div();
-
+        //results = new Div();
 
         // Input de tentativas
         TextField guessInput = new TextField();
@@ -48,13 +47,12 @@ public class TermoView extends VerticalLayout{
         button.addClickListener(buttonClickEvent -> checkGuess(guessInput.getValue()));
         add(button);
 
-
         add(results);
     }
 
     private void checkGuess(String guess) {
         Div div = new Div();
-        String output = "";
+        //String output = "";
 
         for (int i = 0; i < guess.length(); i++) {
             String letter = guess.substring(i, i+1);
