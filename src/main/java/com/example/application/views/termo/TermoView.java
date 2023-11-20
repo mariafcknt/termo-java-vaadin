@@ -21,6 +21,7 @@ import com.vaadin.flow.router.RouteAlias;
 public class TermoView extends VerticalLayout{
 
     private Div results;
+    private String word = "bunny";
     //private String word;
 
     public TermoView() {
@@ -34,6 +35,7 @@ public class TermoView extends VerticalLayout{
 
         add(new H1("Termo"));
 
+        results = new Div();
 
 
         // Input de tentativas
@@ -46,14 +48,14 @@ public class TermoView extends VerticalLayout{
         button.addClickListener(buttonClickEvent -> checkGuess(guessInput.getValue()));
         add(button);
 
-        Div results = new Div();
+
         add(results);
     }
 
     private void checkGuess(String guess) {
         Div div = new Div();
         String output = "";
-        String word = "bunny";
+
         for (int i = 0; i < guess.length(); i++) {
             String letter = guess.substring(i, i+1);
             Span badge = new Span(letter);
@@ -69,7 +71,10 @@ public class TermoView extends VerticalLayout{
             }
             div.add(badge);
         }
-        results.add(output);
+        results.add(div);
+        //System.out.println(results);
+        //add(new H1(results));
+        //System.out.println(results.add(div));
 
         //teste
     }
