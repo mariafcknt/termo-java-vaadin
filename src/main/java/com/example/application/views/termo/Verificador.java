@@ -3,30 +3,30 @@ package com.example.application.views.termo;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 
-public class Tentativas {
-    private String tentativa;
+public class Verificador {
     private Dicionario palavra;
 
-    public Tentativas(String tentativa, Dicionario palavra) {
-        this.tentativa = tentativa;
+    public Verificador() {
         this.palavra = palavra;
     }
 
-    public void checarTentativa(Div results) {
+    public Div verificarTentativa(TextField tentativa) {
         Div div = new Div();
 
         for (int i = 0; i < tentativa.length(); i++) {
-            String letter = tentativa.substring(i, i + 1);
-            Span badge = new Span(letter);
-            if (letter.equals(palavra.getPalavra().substring(i, i + 1))) {
+            String letra = tentativa.substring(i, i + 1);
+            Span badge = new Span(letra);
+            if (letra.equals(palavra.getPalavra().substring(i, i + 1))) {
                 badge.getElement().getThemeList().add("badge success");
-            } else if (palavra.getPalavra().indexOf(letter) > -1) {
+            } else if (palavra.getPalavra().indexOf(letra) > -1) {
                 badge.getElement().getThemeList().add("badge");
             } else {
                 badge.getElement().getThemeList().add("badge contrast");
             }
             div.add(badge);
         }
-        results.add(div);
+       //results.add(div);
+        return div;
+
     }
 }

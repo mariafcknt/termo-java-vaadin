@@ -1,11 +1,9 @@
 package com.example.application.views.termo;
 
 import com.example.application.views.MainLayout;
-import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -22,6 +20,7 @@ public class TermoView extends VerticalLayout{
 
     private Div results;
     private String word = "bunny";
+    //private  TextField tentativa;
     //private String word;
 
     public TermoView() {
@@ -35,22 +34,25 @@ public class TermoView extends VerticalLayout{
 
         add(new H1("Termo"));
 
-        //results = new Div();
+        Verificador verificador = new Verificador();
+        results = new Div();
 
         // Input de tentativas
-        TextField guessInput = new TextField();
-        guessInput.setLabel("Adivinhe a palavra:");
-        add(guessInput);
+        TextField tentativa = new TextField();
+        tentativa.setLabel("Adivinhe a palavra:");
+        add(tentativa);
 
         // Criação e adição do botão
         Button button = new Button("Checar");
-        button.addClickListener(buttonClickEvent -> checkGuess(guessInput.getValue()));
+        button.addClickListener(buttonClickEvent -> verificador.verificarTentativa(tentativa.getValue()));
         add(button);
 
-        add(results);
+        //checkGuess(tentativa);
+        verificador.verificarTentativa(tentativa);
+        //add(results);
     }
 
-    private void checkGuess(String guess) {
+   /* private void checkGuess(String guess) {
         Div div = new Div();
         //String output = "";
 
@@ -75,5 +77,5 @@ public class TermoView extends VerticalLayout{
         //System.out.println(results.add(div));
 
         //teste
-    }
+    }*/
 }
