@@ -7,13 +7,14 @@ public class Verificador {
     private Dicionario palavra;
 
     public Verificador() {
-        this.palavra = palavra;
+        this.palavra = new Dicionario();
     }
 
-    public Div verificarTentativa(TextField tentativa) {
+    public Div verificarTentativa(String tentativa) {
+        System.out.println("Teste passoi por aq");
         Div div = new Div();
-
-        for (int i = 0; i < tentativa.length(); i++) {
+        int rodadas = 0;
+        for (int i = 0; i < tentativa.length() && rodadas < 6 ; i++) {
             String letra = tentativa.substring(i, i + 1);
             Span badge = new Span(letra);
             if (letra.equals(palavra.getPalavra().substring(i, i + 1))) {
@@ -24,9 +25,11 @@ public class Verificador {
                 badge.getElement().getThemeList().add("badge contrast");
             }
             div.add(badge);
+            rodadas += 1;
         }
        //results.add(div);
-        return div;
+        System.out.println(div);
 
+        return div;
     }
 }

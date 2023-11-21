@@ -20,6 +20,7 @@ public class TermoView extends VerticalLayout{
 
     private Div results;
     private String word = "bunny";
+    private TextField tentativa;
     //private  TextField tentativa;
     //private String word;
 
@@ -44,12 +45,18 @@ public class TermoView extends VerticalLayout{
 
         // Criação e adição do botão
         Button button = new Button("Checar");
-        button.addClickListener(buttonClickEvent -> verificador.verificarTentativa(tentativa.getValue()));
+        button.addClickListener(buttonClickEvent -> {
+            Div resultDiv = verificador.verificarTentativa(tentativa.getValue());
+            results.add(resultDiv);
+            add(results);
+
+        });
+
         add(button);
 
         //checkGuess(tentativa);
-        verificador.verificarTentativa(tentativa);
-        //add(results);
+        //verificador.verificarTentativa(tentativa.getValue());
+        add(results);
     }
 
    /* private void checkGuess(String guess) {
