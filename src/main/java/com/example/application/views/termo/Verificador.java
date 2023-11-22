@@ -4,10 +4,10 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 
 public class Verificador {
-    private Dicionario palavra;
+    private Palavra palavra;
 
     public Verificador() {
-        this.palavra = new Dicionario();
+        this.palavra = new Palavra();
     }
 
     public Div verificarTentativa(String tentativa) {
@@ -27,7 +27,7 @@ public class Verificador {
             div.add(badge);
             rodadas += 1;
         }
-       //results.add(div);
+        //results.add(div);
         System.out.println(div);
 
         return div;

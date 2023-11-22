@@ -1,7 +1,8 @@
 package com.example.application.views.termo;
 
-public class Dicionario {
+public class Palavra {
     private String palavra = "bunny";
+    private String caminho_dicionario;
 
     public String getPalavra() {
         return palavra;
@@ -10,4 +11,5 @@ public class Dicionario {
     public void setPalavra(String palavra) {
         this.palavra = palavra;
     }
+
 }

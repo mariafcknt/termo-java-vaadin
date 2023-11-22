@@ -19,10 +19,8 @@ import com.vaadin.flow.router.RouteAlias;
 public class TermoView extends VerticalLayout{
 
     private Div results;
-    private String word = "bunny";
+    //private String word = "bunny";
     private TextField tentativa;
-    //private  TextField tentativa;
-    //private String word;
 
     public TermoView() {
 
@@ -53,36 +51,6 @@ public class TermoView extends VerticalLayout{
         });
 
         add(button);
-
-        //checkGuess(tentativa);
-        //verificador.verificarTentativa(tentativa.getValue());
         add(results);
     }
-
-   /* private void checkGuess(String guess) {
-        Div div = new Div();
-        //String output = "";
-
-        for (int i = 0; i < guess.length(); i++) {
-            String letter = guess.substring(i, i+1);
-            Span badge = new Span(letter);
-            if (letter.equals(word.substring(i, i+1))) {
-              //  output += letter;
-                badge.getElement().getThemeList().add("badge success");
-            } else if (word.indexOf(letter) > -1){
-                //output += "+";
-                badge.getElement().getThemeList().add("badge");
-            } else {
-                //output += "*";
-                badge.getElement().getThemeList().add("badge contrast");
-            }
-            div.add(badge);
-        }
-        results.add(div);
-        //System.out.println(results);
-        //add(new H1(results));
-        //System.out.println(results.add(div));
-
-        //teste
-    }*/
 }
