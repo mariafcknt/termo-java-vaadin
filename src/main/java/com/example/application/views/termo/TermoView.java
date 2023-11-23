@@ -1,6 +1,8 @@
 package com.example.application.views.termo;
 
 import com.example.application.views.MainLayout;
+import com.vaadin.flow.component.Html;
+import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
@@ -23,6 +25,7 @@ public class TermoView extends VerticalLayout{
     private Div results;
     //private String word = "bunny";
     private TextField tentativa;
+    private int rodada;
 
     public TermoView() {
 
@@ -38,12 +41,10 @@ public class TermoView extends VerticalLayout{
         Verificador verificador = new Verificador();
         results = new Div();
 
-        // Input de tentativas
         TextField tentativa = new TextField();
         tentativa.setLabel("Adivinhe a palavra:");
         add(tentativa);
 
-        // Criação e adição do botão
         Button button = new Button("Checar");
 
         button.addClickListener(buttonClickEvent -> {
@@ -57,12 +58,29 @@ public class TermoView extends VerticalLayout{
                     add(results);
                     add(new H3("Parabéns, você acertou!"));
                     button.setEnabled(false);
+            } else if (getRodada() == 5){
+                    add(new H3("Tentativas esgotadas, fim de jogo!"));
+                    Span paragrafo = new Span("A palavra correta era " + verificador.getPalavra());
+                    add(paragrafo);
+
+                    button.setEnabled(false);
             } else {
                     results.add(resultDiv);
                     add(results);
             }
+            setRodada(rodada += 1);
         });
         add(button);
         add(results);
     }
+
+    public int getRodada() {
+        return rodada;
+    }
+
+    public void setRodada(int rodada) {
+        this.rodada = rodada;
+    }
 }
+
+

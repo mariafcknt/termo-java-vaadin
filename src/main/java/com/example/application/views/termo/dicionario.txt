@@ -7,7 +7,6 @@ deter
 claro
 sulco
 velho
-
 exato
 amplo
 atuar
@@ -32,11 +31,9 @@ cauda
 ficar
 ambos
 senao
-remir
 vazio
 capaz
 vacuo
-toada
 varao
 sonsa
 jovem
@@ -69,8 +66,6 @@ feito
 frase
 minha
 ciclo
-torco
-anuir
 verso
 botar
 rigor
@@ -86,7 +81,6 @@ carro
 prece
 lazer
 maior
-moca
 credo
 fauna
 covil
@@ -117,7 +111,7 @@ falta
 grato
 laico
 tecer
-cabal
+casal
 possa
 ameno
 ouvir

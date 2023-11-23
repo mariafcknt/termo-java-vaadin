@@ -13,8 +13,6 @@ public class Verificador {
 
     public Div verificarTentativa(String tentativa) {
         Div div = new Div();
-        Div div_acerto = new Div();
-        //String acerto;
         for (int i = 0; i < tentativa.length(); i++) {
             String letra = tentativa.substring(i, i + 1);
             Span badge = new Span(letra);
@@ -25,13 +23,11 @@ public class Verificador {
             } else {
                 badge.getElement().getThemeList().add("badge contrast");
             }
-
             div.add(badge);
 
             if (tentativa.equals(palavra.getPalavra())){
                 setAcerto(true);
             }
-
         }
         System.out.println(palavra.getPalavra());
         return div;
@@ -43,5 +39,9 @@ public class Verificador {
 
     public void setAcerto(boolean acerto) {
         this.acerto = acerto;
+    }
+
+    public String getPalavra() {
+        return palavra.getPalavra();
     }
 }
