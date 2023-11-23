@@ -11,10 +11,8 @@ public class Verificador {
     }
 
     public Div verificarTentativa(String tentativa) {
-        System.out.println("Teste passoi por aq");
         Div div = new Div();
-        int rodadas = 0;
-        for (int i = 0; i < tentativa.length() && rodadas < 6 ; i++) {
+        for (int i = 0; i < tentativa.length(); i++) {
             String letra = tentativa.substring(i, i + 1);
             Span badge = new Span(letra);
             if (letra.equals(palavra.getPalavra().substring(i, i + 1))) {
@@ -25,11 +23,8 @@ public class Verificador {
                 badge.getElement().getThemeList().add("badge contrast");
             }
             div.add(badge);
-            rodadas += 1;
         }
-        //results.add(div);
-        System.out.println(div);
-
+        System.out.println(palavra.getPalavra());
         return div;
     }
 }

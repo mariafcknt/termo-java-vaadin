@@ -47,7 +47,6 @@ public class TermoView extends VerticalLayout{
             Div resultDiv = verificador.verificarTentativa(tentativa.getValue());
             results.add(resultDiv);
             add(results);
-
         });
 
         add(button);
