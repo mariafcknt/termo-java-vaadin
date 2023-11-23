@@ -4,10 +4,7 @@ import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.dependency.Uses;
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -26,6 +23,8 @@ public class TermoView extends VerticalLayout{
     //private String word = "bunny";
     private TextField tentativa;
     private int rodada;
+    private Palavra palavra;
+    //private Palavra palavra;
 
     public TermoView() {
 
@@ -38,7 +37,7 @@ public class TermoView extends VerticalLayout{
 
         add(new H1("Termo"));
 
-        Verificador verificador = new Verificador();
+        Verificador verificador = new Verificador(palavra);
         results = new Div();
 
         TextField tentativa = new TextField();
@@ -56,11 +55,15 @@ public class TermoView extends VerticalLayout{
                     div.add(badge);
                     results.add(resultDiv);
                     add(results);
+                    Span espaco = new Span("");
+                    add(espaco);
                     add(new H3("Parabéns, você acertou!"));
                     button.setEnabled(false);
-            } else if (getRodada() == 5){
+            } else if (getRodada() == 5) {
+                    Span espaco = new Span("");
+                    add(espaco);
                     add(new H3("Tentativas esgotadas, fim de jogo!"));
-                    Span paragrafo = new Span("A palavra correta era " + verificador.getPalavra());
+                    Span paragrafo = new Span("A palavra correta era " + getPalavra());
                     add(paragrafo);
 
                     button.setEnabled(false);
@@ -73,6 +76,14 @@ public class TermoView extends VerticalLayout{
         add(button);
         add(results);
     }
+
+    public Palavra getPalavra() {
+        return palavra;
+    }
+
+    /*public void setPalavra(Palavra palavra) {
+        this.palavra = palavra;
+    }*/
 
     public int getRodada() {
         return rodada;

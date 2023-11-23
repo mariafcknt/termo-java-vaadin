@@ -7,7 +7,7 @@ public class Verificador {
     private Palavra palavra;
     private boolean acerto;
 
-    public Verificador() {
+    public Verificador(Palavra palavra) {
         this.palavra = new Palavra();
     }
 
@@ -41,7 +41,7 @@ public class Verificador {
         this.acerto = acerto;
     }
 
-    public String getPalavra() {
+    /*public String getPalavra() {
         return palavra.getPalavra();
-    }
+    }*/
 }

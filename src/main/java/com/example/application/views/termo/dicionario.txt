@@ -34,7 +34,6 @@ senao
 vazio
 capaz
 vacuo
-varao
 sonsa
 jovem
 inata
