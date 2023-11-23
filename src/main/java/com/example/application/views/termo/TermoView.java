@@ -4,6 +4,8 @@ import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.dependency.Uses;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -43,12 +45,23 @@ public class TermoView extends VerticalLayout{
 
         // Criação e adição do botão
         Button button = new Button("Checar");
+
         button.addClickListener(buttonClickEvent -> {
             Div resultDiv = verificador.verificarTentativa(tentativa.getValue());
-            results.add(resultDiv);
-            add(results);
+            if (verificador.isAcerto()) {
+                    Div div = new Div();
+                    Span badge = new Span(tentativa);
+                    badge.getElement().getThemeList().add("badge success");
+                    div.add(badge);
+                    results.add(resultDiv);
+                    add(results);
+                    add(new H3("Parabéns, você acertou!"));
+                    button.setEnabled(false);
+            } else {
+                    results.add(resultDiv);
+                    add(results);
+            }
         });
-
         add(button);
         add(results);
     }
