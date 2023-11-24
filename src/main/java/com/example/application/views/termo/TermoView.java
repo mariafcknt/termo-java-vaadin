@@ -58,6 +58,7 @@ public class TermoView extends VerticalLayout {
         tentativa.addKeyPressListener(Key.ENTER, event -> button.click());
         button.addClickListener(buttonClickEvent -> {
             Div resultDiv = verificador.verificarTentativa(tentativa.getValue());
+            setRodada(rodada += 1);
             if (verificador.isAcerto()) {
                 button.setVisible(false);
                 button.setEnabled(false);
@@ -71,18 +72,17 @@ public class TermoView extends VerticalLayout {
                 add(new H3("Parabéns, você acertou!"));
                 Span paragrafo = new Span("Recarregue a página para jogar novamente!");
                 add(paragrafo);
-            } else if (getRodada() == 5) {
+            } else if (getRodada() == 6) {
                 button.setVisible(false);
                 button.setEnabled(false);
                 add(linhaVazia);
                 add(new H3("Tentativas esgotadas, fim de jogo!"));
-                Span paragrafo = new Span("A palavra correta era " + getPalavra() + ". Recarregue a página para jogar novamente!");
+                Span paragrafo = new Span("A palavra correta era " + getPalavra() + " :( Recarregue a página para jogar novamente!");
                 add(paragrafo);
             } else {
                 resultados.add(resultDiv);
                 add(resultados);
             }
-            setRodada(rodada += 1);
             tentativa.clear();
         });
         add(inputLayout);
