@@ -29,7 +29,7 @@ public class Verificador {
                 setAcerto(true);
             }
         }
-        System.out.println(palavra.getPalavra());
+        //System.out.println(palavra.getPalavra());
         return div;
     }
 

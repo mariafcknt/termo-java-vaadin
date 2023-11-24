@@ -36,7 +36,7 @@ public class TermoView extends VerticalLayout{
         getStyle().set("text-align", "center");
 
         add(new H1("Termo"));
-
+        palavra = new Palavra();
         Verificador verificador = new Verificador(palavra);
         results = new Div();
 
@@ -49,27 +49,27 @@ public class TermoView extends VerticalLayout{
         button.addClickListener(buttonClickEvent -> {
             Div resultDiv = verificador.verificarTentativa(tentativa.getValue());
             if (verificador.isAcerto()) {
-                    Div div = new Div();
-                    Span badge = new Span(tentativa);
-                    badge.getElement().getThemeList().add("badge success");
-                    div.add(badge);
-                    results.add(resultDiv);
-                    add(results);
-                    Span espaco = new Span("");
-                    add(espaco);
-                    add(new H3("Parabéns, você acertou!"));
-                    button.setEnabled(false);
+                Div div = new Div();
+                Span badge = new Span(tentativa);
+                badge.getElement().getThemeList().add("badge success");
+                div.add(badge);
+                results.add(resultDiv);
+                add(results);
+                Span espaco = new Span("");
+                add(espaco);
+                add(new H3("Parabéns, você acertou!"));
+                button.setEnabled(false);
             } else if (getRodada() == 5) {
-                    Span espaco = new Span("");
-                    add(espaco);
-                    add(new H3("Tentativas esgotadas, fim de jogo!"));
-                    Span paragrafo = new Span("A palavra correta era " + getPalavra());
-                    add(paragrafo);
+                Span espaco = new Span("");
+                add(espaco);
+                add(new H3("Tentativas esgotadas, fim de jogo!"));
+                Span paragrafo = new Span("A palavra correta era " + getPalavra());
+                add(paragrafo);
 
-                    button.setEnabled(false);
+                button.setEnabled(false);
             } else {
-                    results.add(resultDiv);
-                    add(results);
+                results.add(resultDiv);
+                add(results);
             }
             setRodada(rodada += 1);
         });
@@ -77,8 +77,8 @@ public class TermoView extends VerticalLayout{
         add(results);
     }
 
-    public Palavra getPalavra() {
-        return palavra;
+    public String getPalavra() {
+        return palavra.getPalavra();
     }
 
     /*public void setPalavra(Palavra palavra) {
@@ -93,5 +93,4 @@ public class TermoView extends VerticalLayout{
         this.rodada = rodada;
     }
 }
-
 
