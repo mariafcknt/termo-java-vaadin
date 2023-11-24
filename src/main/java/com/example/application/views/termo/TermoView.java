@@ -22,7 +22,12 @@ public class TermoView extends VerticalLayout {
     private final Div resultados;
     private TextField tentativa;
     private int rodada;
+<<<<<<< Updated upstream
     private final Palavra palavra;
+=======
+    private Palavra palavra;
+    //private Palavra palavra;
+>>>>>>> Stashed changes
 
     public TermoView() {
         setSpacing(false);
@@ -36,9 +41,16 @@ public class TermoView extends VerticalLayout {
         linhaVazia.setHeight("20px");
         add(linhaVazia);
 
+<<<<<<< Updated upstream
         palavra = new Palavra();
         Verificador verificador = new Verificador(palavra.getPalavra());
         resultados = new Div();
+=======
+        Verificador verificador = new Verificador(palavra);
+        Palavra palavra = new Palavra();
+        setPalavra(palavra.getPalavra());
+        results = new Div();
+>>>>>>> Stashed changes
 
         HorizontalLayout inputLayout = new HorizontalLayout();
         inputLayout.setDefaultVerticalComponentAlignment(Alignment.END);
@@ -59,12 +71,16 @@ public class TermoView extends VerticalLayout {
         button.addClickListener(buttonClickEvent -> {
             Div resultDiv = verificador.verificarTentativa(tentativa.getValue());
             if (verificador.isAcerto()) {
+<<<<<<< Updated upstream
                 button.setVisible(false);
                 button.setEnabled(false);
+=======
+>>>>>>> Stashed changes
                 Div div = new Div();
                 Span badge = new Span(tentativa);
                 badge.getElement().getThemeList().add("badge success");
                 div.add(badge);
+<<<<<<< Updated upstream
                 resultados.add(resultDiv);
                 add(resultados);
                 add(linhaVazia);
@@ -81,6 +97,25 @@ public class TermoView extends VerticalLayout {
             } else {
                 resultados.add(resultDiv);
                 add(resultados);
+=======
+                results.add(resultDiv);
+                add(results);
+                Span espaco = new Span("");
+                add(espaco);
+                add(new H3("Parabéns, você acertou!"));
+                button.setEnabled(false);
+            } else if (getRodada() == 5) {
+                Span espaco = new Span("");
+                add(espaco);
+                add(new H3("Tentativas esgotadas, fim de jogo!"));
+                Span paragrafo = new Span("A palavra correta era " + getPalavra());
+                add(paragrafo);
+
+                button.setEnabled(false);
+            } else {
+                results.add(resultDiv);
+                add(results);
+>>>>>>> Stashed changes
             }
             setRodada(rodada += 1);
             tentativa.clear();
@@ -92,6 +127,14 @@ public class TermoView extends VerticalLayout {
         return palavra.getPalavra();
     }
 
+    public String getPalavra() {
+        return palavra.toString();
+    }
+
+    public void setPalavra(Palavra palavra) {
+        this.palavra = palavra;
+    }
+
     public int getRodada() {
         return rodada;
     }
@@ -100,3 +143,7 @@ public class TermoView extends VerticalLayout {
         this.rodada = rodada;
     }
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
