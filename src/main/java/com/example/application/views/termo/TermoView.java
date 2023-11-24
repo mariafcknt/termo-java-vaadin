@@ -72,9 +72,15 @@ public class TermoView extends VerticalLayout {
                 add(new H3("Parabéns, você acertou!"));
                 Span paragrafo = new Span("Recarregue a página para jogar novamente!");
                 add(paragrafo);
-            } else if (getRodada() == 6) {
+            } else if (getRodada() == 5) {
                 button.setVisible(false);
                 button.setEnabled(false);
+                Div div = new Div();
+                Span badge = new Span(tentativa);
+                badge.getElement().getThemeList().add("badge contrast");
+                div.add(badge);
+                resultados.add(resultDiv);
+                add(resultados);
                 add(linhaVazia);
                 add(new H3("Tentativas esgotadas, fim de jogo!"));
                 Span paragrafo = new Span("A palavra correta era " + getPalavra() + " :( Recarregue a página para jogar novamente!");
