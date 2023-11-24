@@ -13,7 +13,7 @@ public class Palavra {
         this.palavra = lerPalavraAleatoriaDoArquivo();
     }
 
-    public Palavra getPalavra() {
+    public String getPalavra() {
         return palavra;
     }
 
@@ -40,25 +40,4 @@ public class Palavra {
             return "Arquivo de palavras vazio";
         }
     }
-<<<<<<< Updated upstream
 }
-=======
-
-}
-
-
-
-/*public class Palavra {
-    private String palavra = "bunny";
-    private String caminho_dicionario;
-
-    public String getPalavra() {
-        return palavra;
-    }
-
-    public void setPalavra(String palavra) {
-        this.palavra = palavra;
-    }
-
-}*/
->>>>>>> Stashed changes

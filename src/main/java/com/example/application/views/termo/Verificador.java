@@ -8,12 +8,8 @@ public class Verificador {
     private boolean acerto;
 
     public Verificador(String palavra) {
-<<<<<<< Updated upstream
         this.palavra = palavra;
         setPalavra(palavra);
-=======
-        this.palavra = TermoView.getPalavra();
->>>>>>> Stashed changes
     }
 
     public Div verificarTentativa(String tentativa) {
@@ -44,7 +40,6 @@ public class Verificador {
         this.acerto = acerto;
     }
 
-<<<<<<< Updated upstream
     public String getPalavra() {
         return palavra;
     }
@@ -52,9 +47,4 @@ public class Verificador {
     public void setPalavra(String palavra) {
         this.palavra = palavra;
     }
-=======
-    /*public String getPalavra() {
-        return palavra.getPalavra();
-    }*/
->>>>>>> Stashed changes
 }
