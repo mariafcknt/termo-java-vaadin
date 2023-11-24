@@ -4,11 +4,12 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Span;
 
 public class Verificador {
-    private Palavra palavra;
+    private String palavra;
     private boolean acerto;
 
-    public Verificador(Palavra palavra) {
-        this.palavra = new Palavra();
+    public Verificador(String palavra) {
+        this.palavra = palavra;
+        setPalavra(palavra);
     }
 
     public Div verificarTentativa(String tentativa) {
@@ -16,20 +17,18 @@ public class Verificador {
         for (int i = 0; i < tentativa.length(); i++) {
             String letra = tentativa.substring(i, i + 1);
             Span badge = new Span(letra);
-            if (letra.equals(palavra.getPalavra().substring(i, i + 1))) {
+            if (letra.equals(getPalavra().substring(i, i + 1))) {
                 badge.getElement().getThemeList().add("badge success");
-            } else if (palavra.getPalavra().indexOf(letra) > -1) {
+            } else if (getPalavra().contains(letra)) {
                 badge.getElement().getThemeList().add("badge");
             } else {
                 badge.getElement().getThemeList().add("badge contrast");
             }
             div.add(badge);
-
-            if (tentativa.equals(palavra.getPalavra())){
+            if (tentativa.equals(getPalavra())){
                 setAcerto(true);
             }
         }
-        //System.out.println(palavra.getPalavra());
         return div;
     }
 
@@ -41,7 +40,11 @@ public class Verificador {
         this.acerto = acerto;
     }
 
-    /*public String getPalavra() {
-        return palavra.getPalavra();
-    }*/
+    public String getPalavra() {
+        return palavra;
+    }
+
+    public void setPalavra(String palavra) {
+        this.palavra = palavra;
+    }
 }

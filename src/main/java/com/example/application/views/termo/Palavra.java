@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Palavra {
-    private String palavra;
+    private final String palavra;
 
     public Palavra() {
         this.palavra = lerPalavraAleatoriaDoArquivo();
@@ -41,19 +41,3 @@ public class Palavra {
         }
     }
 }
-
-
-
-/*public class Palavra {
-    private String palavra = "bunny";
-    private String caminho_dicionario;
-
-    public String getPalavra() {
-        return palavra;
-    }
-
-    public void setPalavra(String palavra) {
-        this.palavra = palavra;
-    }
-
-}*/
